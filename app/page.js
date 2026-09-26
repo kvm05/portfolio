@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <main className="max-w-prose mx-auto px-6">
+    <main className="max-w-prose mx-auto px-6 animate-fadeIn">
       <section className="pt-16 pb-10 text-center">
         <p className="font-display text-gold text-sm tracking-wide mb-4">
           Software engineer, currently studying at USyd
@@ -24,7 +24,7 @@ export default function Home() {
       </section>
 
       <section
-        className="relative h-[60vh] overflow-hidden"
+        className="relative h-[55vh] overflow-hidden"
         style={{ perspective: "400px" }}
       >
         <div className="absolute inset-x-0 bottom-0 flex justify-center">
@@ -45,7 +45,7 @@ export default function Home() {
             The mission continues below.
           </p>
         </div>
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-space to-transparent" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-4 bg-gradient-to-b from-space to-transparent" />
       </section>
     </main>
   );

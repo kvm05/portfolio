@@ -19,6 +19,9 @@ export const metadata = {
   title: "Kartik Menon — Software Engineer",
   description:
     "Portfolio of Kartik Menon, software engineer with experience in cloud infrastructure, full-stack development, and applied AI/ML.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({ children }) {

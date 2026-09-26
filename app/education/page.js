@@ -2,7 +2,7 @@ import { education } from "../../lib/data";
 
 export default function EducationPage() {
   return (
-    <main className="max-w-prose mx-auto px-6 py-16">
+    <main className="max-w-prose mx-auto px-6 py-16 animate-fadeIn">
       <h1 className="font-display text-2xl text-gold mb-10">Education</h1>
       <div className="space-y-6">
         {education.map((e) => (

@@ -16,3 +16,29 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 0.25rem;
 }
+
+@keyframes draw-logo {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(10px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(10px) rotate(-360deg);
+  }
+}
+
+.logo-path {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: draw-logo 1.4s ease forwards;
+}
+
+.logo-orbit {
+  transform-origin: 17px 12px;
+  animation: orbit 6s linear infinite;
+}

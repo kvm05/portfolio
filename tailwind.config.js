@@ -20,11 +20,16 @@ module.exports = {
         crawl: {
           "0%": { transform: "rotateX(25deg) translateY(60%)", opacity: "0" },
           "10%": { opacity: "1" },
-          "100%": { transform: "rotateX(25deg) translateY(-10%)", opacity: "1" },
+          "100%": { transform: "rotateX(25deg) translateY(0%)", opacity: "1" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0", transform: "translateY(8px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       animation: {
         crawl: "crawl 8s ease-out forwards",
+        fadeIn: "fadeIn 0.4s ease forwards",
       },
     },
   },
