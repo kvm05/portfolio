@@ -1,11 +1,11 @@
 export default function Home() {
   return (
-    <main className="max-w-prose mx-auto px-6 animate-fadeIn">
+    <main className="w-[70%] min-h-[83vh] mx-auto my-auto animate-fadeIn flex items-center">
       <section
-        className="pt-16 pb-16 flex flex-col md:flex-row items-start gap-8"
+        className="h-full flex flex-col md:flex-row items-start gap-8"
         style={{ perspective: "400px" }}
       >
-        <div className="relative w-64 h-full my-auto mr-8 border-2 border-gold rounded-md overflow-hidden animate-crtOn shrink-0">
+        <div className="relative w-60 h-full my-auto border-2 mr-16 border-gold overflow-hidden animate-crtOn shrink-0">
           <img
             src="/Kartik_Photo.jpeg"
             alt="Kartik Menon"
@@ -17,33 +17,15 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex-1 text-left w-auto">
-          <div className="animate-crawl" style={{ transformOrigin: "top" }}>
-            <p className="font-display text-gold text-sm tracking-wide mb-4">
-              Software engineer, currently studying at USyd
-            </p>
-            <h1 className="font-display text-4xl md:text-5xl leading-tight mb-6 truncate">
-              Kartik Menon
-            </h1>
-            {/* <div className="flex gap-6 font-sans text-sm">
-              <a href="mailto:kartikmenon.2002@gmail.com" className="text-teal hover:underline">
-                kartikmenon.2002@gmail.com
-              </a>
-              <a
-                href="https://www.linkedin.com/in/kvmenon"
-                className="text-teal hover:underline"
-                target="_blank"
-                rel="noreferrer"
-              >
-                linkedin.com/in/kvmenon
-              </a>
-            </div> */}
-          </div>
-
-          <p
-            className="font-display text-gold text-base md:text-lg leading-relaxed mt-8 animate-crawl"
-            style={{ transformOrigin: "top", animationDelay: "0.3s" }}
-          >
+        <div className="flex-1 my-auto text-left animate-crawl" style={{ transformOrigin: "top" }}>
+          <p className="font-display text-gold text-sm tracking-wide mb-4">
+            Software engineer, currently studying at USyd
+          </p>
+          <h1 className="font-display text-4xl md:text-5xl leading-tight mb-6">
+            Kartik Menon
+          </h1>
+          
+          <p className="font-display text-gold text-base md:text-lg leading-relaxed text-justify">
             Two years into a mission at Barclays, building the cloud
             infrastructure that keeps a global bank running. Backup systems
             deployed, resiliency tested under fire, legacy servers upgraded

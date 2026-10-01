@@ -2,7 +2,7 @@ import { experience } from "../../lib/data";
 
 export default function ExperiencePage() {
   return (
-    <main className="max-w-prose mx-auto px-6 py-16 animate-fadeIn">
+    <main className="w-[70%] mx-auto py-16 animate-fadeIn">
       <h1 className="font-display text-2xl text-gold mb-10">Experience</h1>
       <div className="space-y-10">
         {experience.map((job) => (
