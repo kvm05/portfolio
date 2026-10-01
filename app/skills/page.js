@@ -1,6 +1,13 @@
+"use client";
+
 import { skills } from "../../lib/data";
+import { useLoading } from "../../components/LoadingContext";
 
 export default function SkillsPage() {
+  const { mounted } = useLoading();
+
+  if (mounted) return null;
+
   return (
     <main className="w-[70%] mx-auto py-16 animate-fadeIn">
       <h1 className="font-display text-2xl text-gold mb-10">Skills</h1>

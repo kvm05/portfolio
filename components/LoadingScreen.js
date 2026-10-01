@@ -1,24 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { GiRocket } from "react-icons/gi";
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { useLoading } from "./LoadingContext";
 
 
 const LINES = Array.from({ length: 16 }, (_, i) => i * 22.5);
 
 export default function LoadingScreen() {
-  const [visible, setVisible] = useState(true);
-  const [mounted, setMounted] = useState(true);
-
-  useEffect(() => {
-    const hide = setTimeout(() => setVisible(false), 2000);
-    const unmount = setTimeout(() => setMounted(false), 2500);
-    return () => {
-      clearTimeout(hide);
-      clearTimeout(unmount);
-    };
-  }, []);
+  const { visible, mounted } = useLoading();
 
   if (!mounted) return null;
 

@@ -7,6 +7,14 @@ body {
   color: #edeff4;
 }
 
+.loading-content {
+  visibility: hidden;
+}
+
+.loading-complete .loading-content {
+  visibility: visible;
+}
+
 .rule {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }

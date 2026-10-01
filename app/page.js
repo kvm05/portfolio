@@ -1,4 +1,12 @@
+"use client";
+
+import { useLoading } from "../components/LoadingContext";
+
 export default function Home() {
+  const { mounted } = useLoading();
+
+  if (mounted) return null;
+
   return (
     <main className="w-[70%] min-h-[83vh] mx-auto my-auto animate-fadeIn flex items-center">
       <section

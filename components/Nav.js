@@ -46,8 +46,9 @@ export default function Nav() {
   return (
     <nav className={`sticky top-0 z-20 backdrop-blur-sm bg-black/30 border-b border-white/10 transition-transform duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"}`}>
       <div className="w-[70%] mx-auto px-6 py-4 flex items-center justify-between font-display">
-        <Link href="/" className="font-display rounded px-3 py-1 text-lg tracking-wide">
-          <Logo />
+        <Link href="/" className="font-display rounded py-1 w-10 text-lg tracking-wide">
+          <img src="/km-logo-fill.svg" alt="KM" />
+          {/* <Logo /> */}
         </Link>
           {links.map((l) => (
             <Link

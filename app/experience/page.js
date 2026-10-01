@@ -1,6 +1,13 @@
+"use client";
+
 import { experience } from "../../lib/data";
+import { useLoading } from "../../components/LoadingContext";
 
 export default function ExperiencePage() {
+  const { mounted } = useLoading();
+
+  if (mounted) return null;
+
   return (
     <main className="w-[70%] mx-auto py-16 animate-fadeIn">
       <h1 className="font-display text-2xl text-gold mb-10">Experience</h1>
