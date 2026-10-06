@@ -63,9 +63,10 @@ export default function ExperiencePage() {
                 <div className="h-32 md:h-[clamp(8rem,30vh,16rem)] w-full flex items-center justify-center p-4">
                   <Logo company={j.company} />
                 </div>
-                <h2 className="font-display font-medium text-sm sm:text-base px-4 py-3">
-                  {j.company}
-                </h2>
+                <div className="px-4 py-3">
+                  <h2 className="font-display font-medium text-sm sm:text-base">{j.company}</h2>
+                  <p className="font-display text-xs text-white/50 mt-1 leading-relaxed">{j.subtitle}</p>
+                </div>
               </button>
             ))}
           </div>

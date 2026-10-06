@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const links = [
   { href: "/experience", label: "Experience" },
@@ -19,11 +19,29 @@ export default function Nav() {
   const pathname = usePathname();
   const [isVisible, setIsVisible] = useState(true);
   const [open, setOpen] = useState(false);
+  const navRef = useRef(null);
 
   // Close the mobile menu whenever the route changes
   useEffect(() => {
     setOpen(false);
   }, [pathname]);
+
+  // Close on outside tap/click or Escape while the menu floats over the page
+  useEffect(() => {
+    if (!open) return;
+    const onPointerDown = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) setOpen(false);
+    };
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
 
   // Close it if the window grows into the desktop layout
   useEffect(() => {
@@ -66,6 +84,7 @@ export default function Nav() {
 
   return (
     <nav
+      ref={navRef}
       className={`sticky top-0 z-20 backdrop-blur-sm border-b border-white/10 transition-all duration-300 ${
         open ? "bg-space/95" : "bg-black/30"
       } ${isVisible || open ? "translate-y-0" : "-translate-y-full"}`}
@@ -118,7 +137,7 @@ export default function Nav() {
       {open && (
         <div
           id="mobile-menu"
-          className="lg:hidden border-t border-white/10 px-6 pb-5 pt-2 flex flex-col animate-fadeIn font-display"
+          className="lg:hidden font-display absolute inset-x-0 top-full bg-space/95 border-b border-white/10 shadow-xl shadow-black/50 px-6 pb-5 pt-2 flex flex-col animate-fadeIn"
         >
           {links.map((l) => (
             <Link

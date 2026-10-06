@@ -53,10 +53,10 @@ export default function Footer() {
 
   return (
     <footer className={`w-full fixed px-6 lg:px-[15%] bottom-0 h-[7vh] min-h-[3.25rem] inset-x-0 z-20 flex flex-row justify-between bg-black/30 backdrop-blur-sm border-t border-white/10 transition-transform duration-300 ${isVisible ? "translate-y-0" : "translate-y-full"}`}>
-      <div className='w-fit whitespace-nowrap text-gold/50 py-4 text-xs font-display'>
+      <div className='w-fit whitespace-nowrap text-gold/50 py-4 text-xs font-display flex items-center'>
         Kartik Menon &copy; {new Date().getFullYear()}
       </div>
-      <div className="lg:px-6 py-4 flex items-end gap-6 lg:gap-8">
+      <div className="lg:px-6 py-4 flex items-center gap-6 lg:gap-8">
         {links.map((l) => (
           <a
             key={l.label}
