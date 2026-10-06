@@ -13,7 +13,7 @@ export function LoadingProvider({ children }) {
       setVisible(false);
       document.body.classList.add("loading-complete");
       setMounted(false);
-    }, 2000);
+    }, 4000);
 
     return () => {
       clearTimeout(complete);
