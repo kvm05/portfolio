@@ -9,11 +9,14 @@ export default function EducationPage() {
   if (mounted) return null;
 
   return (
-    <main className="w-[70%] mx-auto py-16 animate-fadeIn">
-      <h1 className="font-display text-2xl text-gold mb-10">Education</h1>
-      <div className="space-y-6">
+    <main className="w-full px-6 lg:w-[70%] lg:px-0 mx-auto pt-10 pb-24 lg:py-16 animate-fadeIn">
+      <h1 className="font-display text-2xl text-gold mb-8 lg:mb-10">Education</h1>
+      <div className="space-y-4 sm:space-y-6">
         {education.map((e) => (
-          <div key={e.school} className="panel p-6 flex flex-wrap justify-between items-baseline gap-x-4">
+          <div
+            key={e.school}
+            className="panel p-5 sm:p-6 flex flex-wrap justify-between items-baseline gap-x-4 gap-y-1"
+          >
             <div>
               <h2 className="font-display font-medium">{e.school}</h2>
               <p className="font-display text-sm text-white/70">{e.degree}</p>

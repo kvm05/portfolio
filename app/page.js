@@ -8,12 +8,12 @@ export default function Home() {
   if (mounted) return null;
 
   return (
-    <main className="w-[70%] min-h-[83vh] mx-auto my-auto animate-fadeIn flex items-center">
+    <main className="w-full px-6 lg:w-[70%] lg:px-0 min-h-[83vh] mx-auto my-auto animate-fadeIn flex items-center pt-6 pb-24 lg:py-0">
       <section
-        className="h-full flex flex-col md:flex-row items-start gap-8"
+        className="h-full w-full flex flex-col lg:flex-row items-center lg:items-start gap-8"
         style={{ perspective: "400px" }}
       >
-        <div className="relative w-60 h-full my-auto border-2 mr-16 border-gold overflow-hidden animate-crtOn shrink-0">
+        <div className="relative w-64 sm:w-60 h-full my-auto border-2 lg:mr-16 border-gold overflow-hidden animate-crtOn shrink-0">
           <img
             src="/Kartik_Photo.jpeg"
             alt="Kartik Menon"
@@ -25,15 +25,15 @@ export default function Home() {
           />
         </div>
 
-        <div className="flex-1 my-auto text-left animate-crawl" style={{ transformOrigin: "top" }}>
+        <div className="flex-1 w-full my-auto text-left animate-crawl" style={{ transformOrigin: "top" }}>
           <p className="font-display text-gold text-sm tracking-wide mb-4">
             Software engineer, currently studying at USyd
           </p>
-          <h1 className="font-display text-4xl md:text-5xl leading-tight mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6">
             Kartik Menon
           </h1>
-          
-          <p className="font-display text-gold text-base md:text-lg leading-relaxed text-justify">
+
+          <p className="font-display text-gold text-base lg:text-lg leading-relaxed text-left lg:text-justify">
             Two years into a mission at Barclays, building the cloud
             infrastructure that keeps a global bank running. Backup systems
             deployed, resiliency tested under fire, legacy servers upgraded

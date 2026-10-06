@@ -46,13 +46,13 @@ export default function ExperiencePage() {
   const job = experience.find((j) => j.company === selected);
 
   return (
-    <main className="w-[70%] min-h-[83vh] mx-auto py-8 flex flex-col animate-fadeIn">
+    <main className="w-full px-6 min-h-[83vh] lg:w-[70%] lg:px-0 mx-auto pt-6 lg:pt-8 lg:pb-0 flex flex-col animate-fadeIn">
       <h1 className="font-display text-2xl text-gold mb-6 shrink-0">Experience</h1>
 
       {!job ? (
         // Nothing selected: tiles centred in the space below the heading
-        <div className="flex-1 flex items-center my-auto">
-          <div className="grid grid-cols-3 gap-4 w-full animate-fadeIn">
+        <div className="flex-1 min-h-0 flex items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full animate-fadeIn">
             {experience.map((j) => (
               <button
                 key={j.company}
@@ -60,7 +60,7 @@ export default function ExperiencePage() {
                 onClick={() => setSelected(j.company)}
                 className="panel !bg-white/[0.07] hover:!bg-white/[0.12] text-left overflow-hidden flex flex-col transition duration-200 hover:-translate-y-1 hover:border-white/30 focus:outline-none focus-visible:border-gold"
               >
-                <div className="h-[clamp(8rem,30vh,16rem)] w-full flex items-center justify-center p-4">
+                <div className="h-32 md:h-[clamp(8rem,30vh,16rem)] w-full flex items-center justify-center p-4">
                   <Logo company={j.company} />
                 </div>
                 <h2 className="font-display font-medium text-sm sm:text-base px-4 py-3">
@@ -73,7 +73,7 @@ export default function ExperiencePage() {
       ) : (
         // One selected: tiles collapse into capsules at the top, details below
         <>
-          <div className="flex flex-wrap gap-3 shrink-0 animate-fadeIn">
+          <div className="flex flex-nowrap sm:flex-wrap gap-2 sm:gap-3 shrink-0 animate-fadeIn">
             {experience.map((j) => {
               const active = j.company === selected;
               return (
@@ -82,14 +82,15 @@ export default function ExperiencePage() {
                   type="button"
                   onClick={() => setSelected(active ? null : j.company)}
                   aria-pressed={active}
-                  className={`panel !bg-transparent !rounded-full flex items-center gap-3 pl-2 pr-5 py-2 transition duration-200 hover:border-white/30 focus:outline-none focus-visible:border-gold ${
+                  aria-label={j.company}
+                  className={`panel !bg-white/[0.07] hover:!bg-white/[0.12] !rounded-full flex flex-1 min-w-0 sm:flex-none items-center justify-center sm:justify-start gap-3 px-3 sm:pl-2 sm:pr-5 py-2 transition duration-200 hover:border-white/30 focus:outline-none focus-visible:border-gold ${
                     active ? "!border-gold" : "opacity-70 hover:opacity-100"
                   }`}
                 >
-                  <span className="h-8 w-8 shrink-0 flex items-center justify-center">
+                  <span className="h-8 w-full sm:w-8 sm:shrink-0 flex items-center justify-center">
                     <Logo company={j.company} small />
                   </span>
-                  <span className="font-display text-sm font-medium">{j.company}</span>
+                  <span className="hidden sm:inline font-display text-sm font-medium">{j.company}</span>
                 </button>
               );
             })}
@@ -97,7 +98,7 @@ export default function ExperiencePage() {
 
           <div
             key={job.company}
-            className="panel p-6 mt-4 min-h-0 overflow-y-auto animate-fadeIn"
+            className="panel p-5 sm:p-6 mt-4 min-h-0 overflow-y-auto animate-fadeIn"
           >
             <div className="flex flex-wrap justify-between items-baseline gap-x-4">
               <h2 className="font-display font-medium text-lg">
@@ -106,7 +107,7 @@ export default function ExperiencePage() {
               <span className="font-display text-sm text-white/50">{job.dates}</span>
             </div>
             <p className="font-display text-sm text-white/50 mb-4">{job.place}</p>
-            <ul className="font-sans text-white/80 leading-relaxed space-y-2 list-disc list-outside ml-5">
+            <ul className="font-display text-white/80 leading-relaxed space-y-2 list-disc list-outside ml-5">
               {job.bullets.map((b) => (
                 <li key={b}>{b}</li>
               ))}

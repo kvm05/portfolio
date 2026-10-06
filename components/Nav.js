@@ -118,7 +118,7 @@ export default function Nav() {
       {open && (
         <div
           id="mobile-menu"
-          className="lg:hidden border-t border-white/10 px-6 pb-5 pt-2 flex flex-col animate-fadeIn"
+          className="lg:hidden border-t border-white/10 px-6 pb-5 pt-2 flex flex-col animate-fadeIn font-display"
         >
           {links.map((l) => (
             <Link

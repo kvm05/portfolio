@@ -3,6 +3,7 @@ import "./globals.css";
 import Starfield from "../components/Starfield";
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
+import Contact from "../components/Contact";
 import LoadingScreen from "../components/LoadingScreen";
 import { LoadingProvider } from "../components/LoadingContext";
 
@@ -37,6 +38,7 @@ export default function RootLayout({ children }) {
             <Starfield />
             <Nav />
             {children}
+            <Contact />
             <Footer />
           </div>
         </LoadingProvider>
